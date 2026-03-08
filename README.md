@@ -1,4 +1,4 @@
-# 🔧 LimaCheck
+#  LimaCheck
 
 App de gerenciamento de tarefas para oficina mecânica.
 
@@ -6,7 +6,7 @@ Desenvolvido para resolver o problema de tarefas esquecidas ou anotadas em papel
 
 ---
 
-## 📱 Funcionalidades
+##  Funcionalidades
 
 - Login com autenticação JWT
 - Lista de tarefas em tempo real com nome do responsável
@@ -16,7 +16,7 @@ Desenvolvido para resolver o problema de tarefas esquecidas ou anotadas em papel
 
 ---
 
-## 🏗️ Arquitetura
+##  Arquitetura
 
 ```
 React Native (Expo)  →  API NestJS  →  PostgreSQL
@@ -24,7 +24,7 @@ React Native (Expo)  →  API NestJS  →  PostgreSQL
 
 ---
 
-## 🚀 Tecnologias
+##  Tecnologias
 
 ### Backend
 - [NestJS](https://nestjs.com/)
@@ -41,7 +41,7 @@ React Native (Expo)  →  API NestJS  →  PostgreSQL
 
 ---
 
-## ⚙️ Como rodar localmente
+##  Como rodar localmente
 
 ### Pré-requisitos
 - Node.js 18+
@@ -97,7 +97,7 @@ baseURL: 'http://SEU_IP:3000'
 
 ---
 
-## 👨‍💻 Autor
+##  Autor
 
 Desenvolvido por **Leonardo** — projeto real para uso em oficina mecânica.
 
