@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { Usuario } from './usuario.entity';
-import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
+import { Usuario } from './usuario.entity';
 
 @Injectable()
 export class UsuarioService {
@@ -31,3 +31,4 @@ export class UsuarioService {
     return this.usuariorRepo.findOne({ where: { nome } });
   }
 }
+

@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
+import { JwtModule } from '@nestjs/jwt';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
-import { JwtModule } from '@nestjs/jwt';
-import { UsuarioModule } from 'src/usuario/usuario.module';
+import { UsuarioModule } from '../usuario/usuario.module';
 
 @Module({
   imports: [
     UsuarioModule,
     JwtModule.register({
-      secret: 'segredo123',
+      secret: process.env.JWT_SECRET || 'segredo123',
       signOptions: { expiresIn: '8h' },
     }),
   ],

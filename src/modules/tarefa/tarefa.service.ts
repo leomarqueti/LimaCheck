@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Tarefa } from './tarefa.entity';
 import { Repository } from 'typeorm';
+import { Tarefa } from './tarefa.entity';
 
 @Injectable()
 export class TarefaService {
@@ -28,3 +28,4 @@ export class TarefaService {
     return this.tarefaRepo.save(tarefa);
   }
 }
+

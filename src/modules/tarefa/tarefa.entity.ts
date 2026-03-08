@@ -1,4 +1,3 @@
-import { Usuario } from 'src/usuario/usuario.entity';
 import {
   Column,
   Entity,
@@ -6,6 +5,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { Usuario } from '../usuario/usuario.entity';
 
 @Entity()
 export class Tarefa {
@@ -25,3 +25,4 @@ export class Tarefa {
   @JoinColumn({ name: 'usuario_id' })
   usuario: Usuario;
 }
+

@@ -9,7 +9,5 @@ export class AuthController {
   login(@Body() dados: { nome: string; senha: string }) {
     return this.authService.login(dados.nome, dados.senha);
   }
-
-
-  
 }
+

@@ -1,22 +1,29 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UsuarioModule } from './usuario/usuario.module';
-import { Usuario } from './usuario/usuario.entity';
-import { TarefaModule } from './tarefa/tarefa.module';
-import { Tarefa } from './tarefa/tarefa.entity';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { UsuarioModule } from './modules/usuario/usuario.module';
+import { Usuario } from './modules/usuario/usuario.entity';
+import { TarefaModule } from './modules/tarefa/tarefa.module';
+import { Tarefa } from './modules/tarefa/tarefa.entity';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: '123456',
-      database: 'tarefas_db',
+      ...(process.env.DATABASE_URL
+        ? {
+            url: process.env.DATABASE_URL,
+            ssl: { rejectUnauthorized: false },
+          }
+        : {
+            host: 'localhost',
+            port: 5432,
+            username: 'postgres',
+            password: '123456',
+            database: 'tarefas_db',
+          }),
       entities: [Usuario, Tarefa],
       synchronize: true,
     }),
@@ -24,7 +31,7 @@ import { AuthModule } from './auth/auth.module';
     TarefaModule,
     AuthModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

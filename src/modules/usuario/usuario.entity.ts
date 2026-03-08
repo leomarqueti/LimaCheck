@@ -1,5 +1,5 @@
-import { Tarefa } from 'src/tarefa/tarefa.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Tarefa } from '../tarefa/tarefa.entity';
 
 @Entity()
 export class Usuario {
@@ -15,3 +15,4 @@ export class Usuario {
   @OneToMany(() => Tarefa, (tarefa) => tarefa.usuario)
   tarefas: Tarefa[];
 }
+
